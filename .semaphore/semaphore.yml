@@ -1,5 +1,9 @@
 version: v1.0
 name: Using execution_time_limit
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
 blocks:
   - name: Creating Docker Image
     execution_time_limit:
